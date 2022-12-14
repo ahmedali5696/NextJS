@@ -71,7 +71,11 @@ body {
 }
 
 .active {
-  @apply text-green-600 bg-slate-50 dark:bg-neutral-800
+  @apply bg-slate-50 dark:bg-neutral-800
+}
+
+.active a {
+  @apply text-green-600
 }
 
 .msg_modal__overlay {

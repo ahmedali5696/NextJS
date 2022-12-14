@@ -1,10 +1,22 @@
 import Image from "next/image";
+import { useRef, useEffect } from "react";
 
 import NavbarListItem from "./NavbarListItem";
 import DarkBtn from "./DarkBtn";
 import logo from "../../public/logo2.png"
 
-export default function Navbar({navItems, navIcons}) {
+export default function Navbar({ navItems, navIcons }) {
+  // const itemRef = useRef()
+
+  // useEffect(() => {
+  //   console.log(itemRef)
+  // }, [])
+
+  // function addActiveClass(e) {
+  //   // itemRef.current.classList.remove('nav-item')
+    
+  //   e.target.parentElement.classList.add('active')
+  // }
 
   return (
     <nav className="navbar main-bg main-text-color fixed z-10 top-0 left-0 h-screen py-6 shadow overflow-hidden w-[60px] md:w-[250px] hover:w-[200px] md:hover:w-[250px] transition-[width] duration-300">
@@ -17,10 +29,11 @@ export default function Navbar({navItems, navIcons}) {
       <ul className="navbar__nav capitalize mx-1 px-4">
         {navItems.map((item, index) =>
           <NavbarListItem key={item} item={item} icon={navIcons[index]} />
-          )}
+        )}
       </ul>
       <DarkBtn />
 
     </nav>
   );
 }
+

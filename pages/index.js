@@ -12,6 +12,7 @@ import Spinner from "../components/Spinner"
 
 import { getData } from "../store/dataSlice";
 import { wrapper } from '../store'
+import Script from "next/script";
 const Layout = React.lazy(() => import("../components/Layout/Layout"));
 
 
@@ -25,6 +26,7 @@ export default function Home() {
   ]
   return (
     <>
+      <Script src='../components/myScript.js' defer />
       <Meta />
       <Suspense fallback={<Spinner />}>
         <Layout navs={navs}>

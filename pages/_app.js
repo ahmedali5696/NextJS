@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 
 import { wrapper } from '../store'
 import '../styles/globals.css'
+import Script from 'next/script';
 
 
 function MyApp({ Component, ...rest }) {

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import Spinner from "../Spinner";
-import ProjectCard from "./Projectcard";
+import ProjectCard from "./ProjectCard";
 import SectionHeader from "./SectionHeader";
 
 export default function Portfolio() {
