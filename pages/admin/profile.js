@@ -136,8 +136,4 @@ export default function Profile() {
 export const getStaticProps = wrapper.getStaticProps(
   (store) => async () => {
     await store.dispatch(updateData('profile'))
-
-    return{
-      revalidate: 86000
-    }
   })
