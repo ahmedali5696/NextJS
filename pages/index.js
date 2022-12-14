@@ -26,7 +26,6 @@ export default function Home() {
   ]
   return (
     <>
-      <Script src='../components/myScript.js' defer />
       <Meta />
       <Suspense fallback={<Spinner />}>
         <Layout navs={navs}>
