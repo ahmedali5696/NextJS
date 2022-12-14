@@ -31,7 +31,7 @@ export default function Profile() {
   return (
     <div className=" flex text-center main-text-color p-main-style gap-3 p-6 mb-28">
       <div className="my-auto mr-auto">
-        <a href="http://localhost:3000/" target="_blank" rel="noreferrer" className="btn bg-green-600 text-slate-50">
+        <a href={window.location.hostname} target="_blank" rel="noreferrer" className="btn bg-green-600 text-slate-50">
           Website
         </a>
       </div>

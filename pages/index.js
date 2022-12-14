@@ -12,7 +12,6 @@ import Spinner from "../components/Spinner"
 
 import { getData } from "../store/dataSlice";
 import { wrapper } from '../store'
-import Script from "next/script";
 const Layout = React.lazy(() => import("../components/Layout/Layout"));
 
 
