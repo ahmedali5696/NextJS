@@ -43,4 +43,8 @@ export default function Home() {
 export const getStaticProps = wrapper.getStaticProps(
   (store) => async () => {
     await store.dispatch(getData())
+
+    return {
+      revalidate: 10
+    }
   })
