@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  #__next {
+    @apply flex min-h-screen flex-col;
+  }
+  input:focus,
+  input:focus-within,
+  input:focus-visible,
+  input:active {
+    outline: 0;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply rounded-md border-[1px] px-3 py-1 text-sm hover:opacity-90 md:text-base;
+  }
+
+  .admin-btn {
+    @apply btn mx-auto block bg-green-600 text-slate-50;
+  }
+}
+
+@layer utilities {
+  .main-text-color {
+    @apply text-gray-600 dark:text-gray-300;
+  }
+
+  .main-bg {
+    @apply bg-white dark:bg-neutral-900;
+  }
+
+  .heading {
+    @apply heading-black text-base font-semibold sm:text-lg;
+  }
+
+  .heading-black {
+    @apply text-black dark:text-gray-50;
+  }
+
+  .p-main-style {
+    @apply main-text-color text-sm sm:text-base;
+  }
+
+  .input-group {
+    @apply mb-2 flex flex-col text-sm md:text-base;
+  }
+
+  .input-group input {
+    @apply w-full rounded p-1 text-gray-600;
+  }
+
+  .dash-section {
+    @apply mx-auto mb-32 max-w-lg px-5;
+  }
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-[#fcfcfe] dark:bg-zinc-900;
+}
+
+.msg_modal {
+  @apply main-bg main-text-color fixed top-[50%] left-[40%] -translate-x-1/4 -translate-y-1/2 rounded p-5 outline-none md:left-[60%] md:-translate-x-1/2 md:p-10;
+}
+
+.active {
+  @apply text-green-600 bg-slate-50 dark:bg-neutral-800
+}
+
+.msg_modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}  */
