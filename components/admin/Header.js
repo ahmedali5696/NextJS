@@ -13,6 +13,7 @@ export default function Profile() {
   const router = useRouter()
   const [dashboard, setDashboard] = useState()
   const { profile } = useSelector(state => state.data.data)
+  const domain = window.location.hostname
 
 
   useEffect(() => {
@@ -31,7 +32,7 @@ export default function Profile() {
   return (
     <div className=" flex text-center main-text-color p-main-style gap-3 p-6 mb-28">
       <div className="my-auto mr-auto">
-        <a href={window.location.hostname} target="_blank" rel="noreferrer" className="btn bg-green-600 text-slate-50">
+        <a href={`https://${domain}`} target="_blank" rel="noreferrer" className="btn bg-green-600 text-slate-50">
           Website
         </a>
       </div>
