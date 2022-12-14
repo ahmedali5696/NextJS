@@ -133,11 +133,7 @@ export default function Profile() {
 }
 
 
-export const getStaticProps = wrapper.getStaticProps(
+export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async () => {
     await store.dispatch(updateData('profile'))
-
-    return {
-      revalidate: 10
-    }
   })

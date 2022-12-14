@@ -51,11 +51,7 @@ export default function Home() {
   );
 }
 
-export const getStaticProps = wrapper.getStaticProps(
+export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async () => {
     await store.dispatch(getData())
-
-    return {
-      revalidate: 10
-    }
   })
