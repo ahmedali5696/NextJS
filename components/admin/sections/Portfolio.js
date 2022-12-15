@@ -35,13 +35,8 @@ export default function Portfolio() {
     if (!checkEmptyFields(allInputs)) {
       uploadImg('portfolio', projectImg)
         .then(imgUrl => addNewItem('portfolio', {
-          name,
-          description,
-          codeLink,
-          liveLink,
-          img: imgUrl
+          name, description, codeLink, liveLink, img: imgUrl
         }, id))
-
 
       clearForm(allInputs)
     }

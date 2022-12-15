@@ -18,7 +18,7 @@ export default function Portfolio() {
       <div className="grid grid-cols-[repeat(auto-fit,minmax(185px,1fr))] gap-4 lg:px-20 xl:px-32">
         {isLoading ?
           <Spinner /> :
-          myPortfolio.map(project => (
+          myPortfolio.reverse().map(project => (
             project &&
             <ProjectCard key={project.id}
               img={project.img}
