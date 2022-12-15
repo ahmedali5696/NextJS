@@ -16,7 +16,7 @@ export default function Portfolio() {
   const myPortfolio = typeof portfolio === 'object' ? Object.values(portfolio) : portfolio || []
 
   const [addNewItem] = useAddData()
-  const { uploadImg } = useUploadImg()
+  const { uploadImg, imgLoading } = useUploadImg()
   const { removeItem } = useRemoveData()
   const [emptyFieldMsg, checkEmptyFields, clearForm] = useValidate()
 
@@ -57,26 +57,33 @@ export default function Portfolio() {
       <p className="text-red-500 mb-2">{emptyFieldMsg}</p>
 
       <form onSubmit={submitHandler}>
-        <div className="input-group main-text-color">
-          <label htmlFor="project-name">Project Name <span className="text-red-500">*</span></label>
-          <input type="text" name="project-name" id="project-name" />
-        </div>
-        <div className="input-group main-text-color">
-          <label htmlFor="project-descr">Description <span className="text-red-500">*</span></label>
-          <input type="text" name="project-descr" id="project-descr" />
-        </div>
-        <div className="input-group main-text-color">
-          <label htmlFor="code">Code link <span className="text-red-500">*</span></label>
-          <input type="url" placeholder="https://example.com" name="code" id="code" />
-        </div>
-        <div className="input-group main-text-color">
-          <label htmlFor="live">Live Link <span className="text-red-500">*</span></label>
-          <input type="url" placeholder="https://example.com" name="live" id="live" />
-        </div>
-        <div className="input-group main-text-color">
-          <label htmlFor="project-img">Project Img <span className="text-red-500">*</span></label>
-          <input type="file" name="project-img" id="project-img" accept="image/*" />
-        </div>
+        {imgLoading ?
+          <div className="p-32">
+            <Spinner />
+          </div> :
+          <>
+            <div className="input-group main-text-color">
+              <label htmlFor="project-name">Project Name <span className="text-red-500">*</span></label>
+              <input type="text" name="project-name" id="project-name" />
+            </div>
+            <div className="input-group main-text-color">
+              <label htmlFor="project-descr">Description <span className="text-red-500">*</span></label>
+              <input type="text" name="project-descr" id="project-descr" />
+            </div>
+            <div className="input-group main-text-color">
+              <label htmlFor="code">Code link <span className="text-red-500">*</span></label>
+              <input type="url" placeholder="https://example.com" name="code" id="code" />
+            </div>
+            <div className="input-group main-text-color">
+              <label htmlFor="live">Live Link <span className="text-red-500">*</span></label>
+              <input type="url" placeholder="https://example.com" name="live" id="live" />
+            </div>
+            <div className="input-group main-text-color">
+              <label htmlFor="project-img">Project Img <span className="text-red-500">*</span></label>
+              <input type="file" name="project-img" id="project-img" accept="image/*" />
+            </div>
+          </>
+        }
         <button type="submit" className="admin-btn">Submit</button>
       </form>
 

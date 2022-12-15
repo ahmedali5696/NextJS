@@ -17,9 +17,8 @@ export default function Skills() {
   const { isLoading } = useSelector(state => state.data)
   const { skills } = useSelector(state => state.data.data)
   const mySkills = typeof skills === 'object' ? Object.values(skills) : skills || []
-  const [show, setShow] = useState(false)
 
-  const { uploadImg } = useUploadImg()
+  const { uploadImg, imgLoading } = useUploadImg()
   const [addNewItem] = useAddData()
   const { removeItem } = useRemoveData()
   const [emptyFieldMsg, checkEmptyFields, clearForm] = useValidate()
@@ -37,7 +36,6 @@ export default function Skills() {
       uploadImg('skills', selectedImg)
         .then(imgUrl => addNewItem('skills', { img: imgUrl, name: skillName }, id))
 
-      setShow(true)
       clearForm(allInputs)
     }
   }
@@ -53,14 +51,21 @@ export default function Skills() {
       <p className="text-red-500 mb-2">{emptyFieldMsg}</p>
 
       <form onSubmit={addItemHandler}>
-        <div className="input-group main-text-color">
-          <label htmlFor="skill-name">Skill Name <span className="text-red-400">*</span></label>
-          <input type="text" name="skill-name" id="skill-name" />
-        </div>
-        <div className="input-group main-text-color">
-          <label htmlFor="skill-logo">Skill Logo <span className="text-red-400">*</span></label>
-          <input type="file" name="skill-logo" id="skill-logo" accept="image/*" />
-        </div>
+        {imgLoading ?
+          <div className="p-11">
+            <Spinner />
+          </div> :
+          <>
+            <div className="input-group main-text-color">
+              <label htmlFor="skill-name">Skill Name <span className="text-red-400">*</span></label>
+              <input type="text" name="skill-name" id="skill-name" />
+            </div>
+            <div className="input-group main-text-color">
+              <label htmlFor="skill-logo">Skill Logo <span className="text-red-400">*</span></label>
+              <input type="file" name="skill-logo" id="skill-logo" accept="image/*" />
+            </div>
+          </>
+        }
         <button id="skill-btn" type="submit" className="admin-btn">Submit</button>
       </form>
 
