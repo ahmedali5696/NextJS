@@ -11,7 +11,7 @@ export default function ProjectCard({ img, heading, desc, code, live }) {
       </div>
       <div className=" -translate-x-full group-hover:translate-x-0 transition-all duration-300 absolute flex flex-col top-0 w-full h-full p-3 bg-[rgb(22,163,74,0.8)] rounded-md text-slate-50">
         <div>
-          <h4 className=" font-semibold text-lg border-b-2 border-white inline-block mb-1">{heading}</h4>
+          <h4 className=" font-semibold border-b-2 border-white inline-block mb-1">{heading}</h4>
         </div>
         <p className="text-gray-200 font-light">{desc}</p>
         <div className="flex flex-col mt-auto">
