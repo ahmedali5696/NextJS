@@ -27,7 +27,7 @@ export default function Header() {
 
       <div className="header__profile mx-6 flex flex-col lg:flex-row justify-between">
         <div className="  flex flex-col md:flex-row -translate-y-10">
-          <Image className=" rounded-full border-4 border-white drop-shadow-lg shadow-lg w-24 h-24 sm:w-40 sm:h-40" src={profile[0].img} alt="Profile Photo" width={160} height={160} />
+          <Image className=" rounded-full border-4 border-white drop-shadow-lg shadow-lg w-28 h-28 sm:w-40 sm:h-40" src={profile[0].img} alt="Profile Photo" width={160} height={160} />
 
           <div className=" ml-1 md:ml-4 pt-3 md:pt-14 ">
             <h1 className=" font-semibold text-sm sm:text-2xl dark:text-gray-50">{profile[0].fullname}</h1>
