@@ -10,12 +10,9 @@ export default function useAddData() {
 
   function addNewItem(path, item, id) {
     const db = getDatabase();
-
-    setLoading(true)
     set(ref(db, path + '/' + id), { ...item, id: id + 1 })
     	.then(() => {
         dispatch(updateData(path))
-        setLoading(false)
       })
       .catch((error) => {
         console.log(error)
