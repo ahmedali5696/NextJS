@@ -7,7 +7,7 @@ import { storage } from "../firebase";
 
 export default function useUploadImg() {
   const [progresspercent, setProgresspercent] = useState(0);
-  const [loading, setLoading] = useState(false)
+  const [imgLoading, setLoading] = useState(false)
 
 
   function uploadImg(path, targetFile) {
@@ -17,6 +17,7 @@ export default function useUploadImg() {
       if (!file) return;
 
       setLoading(true)
+
       const storageRef = ref(storage, path + '/' + file.name);
       const uploadTask = uploadBytesResumable(storageRef, file);
 
@@ -39,9 +40,9 @@ export default function useUploadImg() {
       })
 
       promise.then(downloadURL => resolve(downloadURL))
-        .then(setLoading(false))
+        .then(() => setLoading(false))
     })
   }
 
-  return { uploadImg, loading }
+  return { uploadImg, imgLoading }
 }
