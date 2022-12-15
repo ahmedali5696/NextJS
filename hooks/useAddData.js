@@ -1,13 +1,11 @@
 import { getDatabase, ref, set } from "firebase/database";
 import { useDispatch } from "react-redux";
-import { useState } from "reaction "
 
 import { updateData } from "../store/dataSlice";
 
 
 export default function useAddData() {
   const dispatch = useDispatch()
-  const [loading, setLoading] = useState(false)
 
 
   function addNewItem(path, item, id) {
@@ -24,5 +22,5 @@ export default function useAddData() {
       });
   }
 
-  return [addNewItem, loading]
+  return [addNewItem]
 }
