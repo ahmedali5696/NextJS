@@ -19,7 +19,7 @@ export default function Skills() {
   const mySkills = typeof skills === 'object' ? Object.values(skills) : skills || []
   const [show, setShow] = useState(false)
 
-  const { uploadImg } = useUploadImg()
+  const { uploadImg, loading } = useUploadImg()
   const [addNewItem] = useAddData()
   const { removeItem } = useRemoveData()
   const [emptyFieldMsg, checkEmptyFields, clearForm] = useValidate()
@@ -65,7 +65,7 @@ export default function Skills() {
       </form>
 
       <ul className="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-1 border rounded-md p-2 mt-5">
-        {isLoading ?
+        {isLoading || loading ?
           <Spinner /> :
           mySkills.map(skill => (
             skill &&
