@@ -23,7 +23,7 @@ My personal website to display all my work related skills, experiences, personal
 ## Getting Started
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-First, install npm packeges:
+First, install packeges:
 ```bash
 npm install
 # or
