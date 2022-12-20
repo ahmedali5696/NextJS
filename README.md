@@ -1,8 +1,35 @@
+## My Resume
+[Live Preview](https://ahmed-ali.vercel.app)
+
+My personal website to display all my work related skills, experiences, personal data, and means of communication with me, and anyone can browse it and receive messages from customers or visitors in general.
+
+## Technologies
+- NextJS 13.0.6
+- Redux-Toolkit 1.9.1
+- next-redux-wrapper 8.0.0
+- Firebase
+- Tailwind.css 3.2.4
+
+## Features
+- Dashboard
+- Login page to dashboard
+- Store login data in the browser
+- Add, editing and remove data to site
+- User can send message and i receive it in dashboard
+- Dark Mode and remembering the selected mode 
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+First, install npm packeges:
+```bash
+npm install
+# or
+yarn install
+```
+
+then, run the development server:
 
 ```bash
 npm run dev
@@ -12,11 +39,6 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 ## Learn More
 
