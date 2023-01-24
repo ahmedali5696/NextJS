@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <>
       <Meta title="Ahmed Ali | Dashboard" />
-      {mounted &&
+//       {mounted &&
         <Layout navs={navs}>
           <Header />
           <main>
@@ -46,7 +46,7 @@ export default function Home() {
             <Messages />
           </main>
         </Layout>
-      }
+//       }
     </>
   );
 }
