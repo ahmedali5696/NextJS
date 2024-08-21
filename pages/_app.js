@@ -16,7 +16,7 @@ function MyApp({ Component, ...rest }) {
       document.documentElement.classList.add('dark')
     }
     setIsSSR(false)
-  })
+  }, [])
   
 if (isSSR) return null
   return (
