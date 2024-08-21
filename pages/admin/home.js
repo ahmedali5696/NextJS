@@ -33,21 +33,19 @@ export default function Home() {
   ]
 
   return (
-    <>
+    <div>
       <Meta title="Ahmed Ali | Dashboard" />
-//       {mounted &&
-        <Layout navs={navs}>
-          <Header />
-          <main>
-            <Skills />
-            <Experiances />
-            <Portfolio />
-            <Certifications />
-            <Messages />
-          </main>
-        </Layout>
-//       }
-    </>
+      <Layout navs={navs}>
+        <Header />
+        <main>
+          <Skills />
+          <Experiances />
+          <Portfolio />
+          <Certifications />
+          <Messages />
+        </main>
+      </Layout>
+    </div>
   );
 }
 
