@@ -21,15 +21,15 @@ export default function About() {
           {profile[0].about}
         </p> */}
       </div>
-      <div>
-        <div className="mb-6">
-          <h4 className="p-main-style mb-2 font-medium">Location</h4>
-          <p className=" font-medium flex gap-2 text-[18px] h-5 items-center heading-black">
-            <Image src={egypt} alt="Egypt Flag" width={20} height={20} /> Cairo, Egypt</p>
-        </div>
+      // <div>
+      //   <div className="mb-6">
+      //     <h4 className="p-main-style mb-2 font-medium">Location</h4>
+      //     <p className=" font-medium flex gap-2 text-[18px] h-5 items-center heading-black">
+      //       <Image src={egypt} alt="Egypt Flag" width={20} height={20} /> Cairo, Egypt</p>
+      //   </div>
 
-        <SocialLinks />
-      </div>
+      //   <SocialLinks />
+      // </div>
     </main>
   );
 }
