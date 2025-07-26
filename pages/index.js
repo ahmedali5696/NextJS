@@ -12,12 +12,13 @@ import Spinner from "../components/Spinner"
 
 import { getData } from "../store/dataSlice";
 import { wrapper } from '../store'
+import { useSelector } from "react-redux";
 const Layout = React.lazy(() => import("../components/Layout/Layout"));
 
 
 
 export default function Home() {
-
+const { profile } = useSelector(state => state.data.data)
 
   const navs = [
     ['home', 'about', 'skills', 'experiance', 'portfolio', 'certifications'],
@@ -25,7 +26,7 @@ export default function Home() {
   ]
   return (
     <>
-      <Meta />
+      <Meta title={`${profile[0].fullname} | Front-end Developer`} />
       <Suspense fallback={<Spinner />}>
         <Layout navs={navs}>
           <Header />
