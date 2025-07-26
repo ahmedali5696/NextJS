@@ -12,17 +12,21 @@ export default function ContactForm() {
   const [emptyFieldMsg, checkEmptyFields] = useValidate()
   const [addNewItem] = useAddData()
 
-  const getUserLocation = () => {
+  const getUserLocation = async () => {
     const id = locations?.length || 0
 
     if (typeof window !== 'undefined') {
       const geolocation = window.navigator.geolocation
 
       if (geolocation) {
-        geolocation.getCurrentPosition((position) => {
-          addNewItem('locations', { lat: position.coords.latitude, long: position.coords.longitude, date: new Date().toISOString() }, id)
-        }, (error) => {
-          addNewItem('locations', { lat: 0, long: 0, date: new Date().toISOString() }, id)
+        return await new Promise((resolve, reject) => {
+          geolocation.getCurrentPosition((position) => {
+            addNewItem('locations', { lat: position.coords.latitude, long: position.coords.longitude, date: new Date().toISOString() }, id)
+            resolve()
+          }, (error) => {
+            addNewItem('locations', { lat: 0, long: 0, date: new Date().toISOString() }, id)
+            reject(error)
+          });
         });
       }
     }
@@ -41,11 +45,12 @@ export default function ContactForm() {
     if (!checkEmptyFields(allInput)) {
       window.navigator.permissions.query({ name: "geolocation" }).then((result) => {
         if (result.state === "granted" || result.state === "prompt") {
-          getUserLocation()
+          getUserLocation().then(() => {
+            dispatch(sendMsg({
+              msg: { id: id + 1, username, email, msg }, id
+            }));
+          })
 
-          dispatch(sendMsg({
-            msg: { id: id + 1, username, email, msg }, id
-          }));
         } else {
           alert("لقد رفضت الوصول الى الموقع. يرجى تفعيله من إعدادات المتصفح او افتح من متصفح مختلف او في صفحة متصفح متخفي.");
         }
