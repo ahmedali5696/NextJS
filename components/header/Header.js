@@ -23,7 +23,7 @@ export default function Header() {
 
       <div className="header__cover w-full h-[clamp(200px,50vw,300px)] relative shadow-[inset_0px_0px_30px_rgba(0,0,0,0.2)]">
         {/* <Image className="-z-10 object-cover" src={cover} alt="Site Cover" fill /> */}
-        <Image className="-z-10 object-cover" src='https://img.freepik.com/free-vector/gradient-business-linkedin-banner_23-2150091566.jpg' alt="Site Cover" fill />
+        <img className="-z-10 object-cover" src='https://img.freepik.com/free-vector/gradient-business-linkedin-banner_23-2150091566.jpg' alt="Site Cover" style={{ width: "100%", height: "100%" }} />
       </div>
 
       <div className="header__profile mx-6 flex flex-col lg:flex-row justify-between">
