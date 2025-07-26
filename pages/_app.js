@@ -10,14 +10,16 @@ function MyApp({ Component, ...rest }) {
   const { pageProps } = props;
   const [isSSR, setIsSSR] = useState(true)
 
+
   useEffect(() => {
     if (localStorage.getItem('theme') === "dark") {
       document.documentElement.classList.add('dark')
     }
+
     setIsSSR(false)
   }, [])
-  
-if (isSSR) return null
+
+  if (isSSR) return null
   return (
     <Provider store={store}>
       <Component {...pageProps} />
