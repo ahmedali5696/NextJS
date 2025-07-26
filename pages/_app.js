@@ -1,9 +1,8 @@
 import { Provider } from 'react-redux'
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { wrapper } from '../store'
 import '../styles/globals.css'
-import Script from 'next/script';
 
 
 function MyApp({ Component, ...rest }) {
