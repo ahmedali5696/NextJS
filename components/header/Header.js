@@ -31,7 +31,7 @@ export default function Header() {
           <Image className=" rounded-full border-4 border-white drop-shadow-lg shadow-lg w-28 h-28 sm:w-40 sm:h-40" src={profile[0].img} alt="Profile Photo" width={160} height={160} />
 
           <div className=" ml-1 md:ml-4 pt-3 md:pt-14 ">
-            <h1 className=" font-semibold text-sm sm:text-2xl text-gray-600 dark:text-gray-50">{profile[0].fullname}</h1>
+            <h1 className=" font-semibold text-sm sm:text-2xl text-black dark:text-gray-50">{profile[0].fullname}</h1>
             <h2 className="main-text-color text-sm sm:text-base" >{profile[0].jop}</h2>
           </div>
         </div>
