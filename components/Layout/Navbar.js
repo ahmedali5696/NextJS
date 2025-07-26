@@ -14,7 +14,7 @@ export default function Navbar({ navItems, navIcons }) {
 
       <div className="navbar__brand relative flex gap-4 items-center mb-10 pl-4">
         <Image className="logo object-contain rounded-md shadow" src={logo} alt="Site Logo" width={30} />
-        <h3 className="name font-bold text-black dark:text-gray-50 whitespace-nowrap">{profile[0].fullname}</h3>
+        <h3 className="name font-bold text-black dark:text-gray-50 whitespace-nowrap">{profile?.[0].fullname}</h3>
       </div>
 
       <ul className="navbar__nav capitalize mx-1 px-4">
