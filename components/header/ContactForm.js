@@ -73,8 +73,8 @@ export default function ContactForm() {
               <input id="your-name" className=" form-input" name="your-name" type="text" />
             </div>
             <div className="input-group">
-              <label htmlFor="email">Email</label>
-              <input id="email" className=" form-input" name="email" type="email" />
+              <label htmlFor="email">Phone</label>
+              <input id="email" className=" form-input" name="email" type="text" />
             </div>
             <div className="input-group">
               <label htmlFor="message">Your Message</label>
